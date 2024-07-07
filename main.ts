@@ -347,6 +347,8 @@
 //30th June, 2024.....
 
 // Local vs Global Scope Variable...
+//var is a global variable.... let and const are block scope variable
+
 
 // var globalVar= "I am a global variable";
 // function scope(){
@@ -354,9 +356,118 @@
 // }
 // scope();
 
+// (){}......we called it control.....object syntax is a declaration
+// function scope() {
+//     var globalVar = "I am a global variable";
+//     console.log(globalVar);
+// }
+// scope();
 
-function scope() {
-    var globalVar = "I am a global variable";
-    console.log(globalVar);
+
+
+// Do While Loop.....
+
+// let count = 0;
+// while (count < 5) {
+//     console.log(count);
+//     count++;
+// };
+
+// Do while execute code at least one time regardless of the condition is true or Not...
+// let i=0;
+// do{
+//     console.log(i);
+//     i++;
+// }while(i<6);
+
+// paper from chapter 1 to 10.... slides and class concepts.
+
+
+// let age = 25;
+
+// if (true) {
+//     let age = 20;
+//     console.log(age);
+
+// }
+// console.log(age);
+
+
+
+
+// 7 July, 2024....
+// console.log("umar");
+
+// function greeting(){
+//     console.log("This is message");
+
+// }
+// console.log("This is message 2");
+// console.log("This is message 3");
+// greeting()
+
+
+
+//Event loop work on call stack thats why above programe run set timeout in last....
+
+//macro task queue and micro task queue...
+//Asynchronous programming in Js is set timeout function.....
+// console.log("Start");
+// setTimeout(() => {
+//   console.log("This runs after 4  seconds");
+// }, 0);
+
+// console.log("End");
+
+//callback function.....
+// function greeting(cb){
+//   setTimeout(() => {
+//     console.log("hello world");
+//     cb();
+//   }, 2000);
+
+// }
+
+// function printNamne(){
+//   setTimeout(() => {
+//     console.log("Ali");
+
+//   }, 1000);
+// }
+
+// Promise....,pending, fulfilled, rejected...Promise is asynchronous
+
+function makeBiryani() {
+  return new Promise((resolve, reject) => {
+    resolve("yes i cook biryani");
+    reject("i will not cook biryani");
+  })
 }
-scope();
+// makeBiryani()
+//   .then((result) => {
+//     console.log(result);
+//   }
+//   )
+//   .catch((err) => {
+//     console.log(err);
+//   })
+
+async function callPromise() {
+  try {
+    const result = await makeBiryani()
+    console.log(result);
+    console.log("you all are invited");
+  } catch (error) {
+    console.log("error");
+
+  }
+  finally{
+    console.log("It's final");
+    
+  }
+}
+callPromise()
+
+
+// Above two mnethod are calling to promise one from .then .catch and other from async function through await..... 
+//try and catch are same as .then and .catch.....

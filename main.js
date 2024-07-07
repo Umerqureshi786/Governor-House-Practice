@@ -3,6 +3,42 @@
 //  console.log(students); 
 //  students.push("Ali"); //push methode....Add new element to array
 //  console.log(students); 
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 //  students.pop();
 //  console.log(students);
 // const lastElement=students.pop();//push methode....Remove last element from array
@@ -223,13 +259,105 @@
 // };
 //30th June, 2024.....
 // Local vs Global Scope Variable...
+//var is a global variable.... let and const are block scope variable
 // var globalVar= "I am a global variable";
 // function scope(){
 // console.log(globalVar);
 // }
 // scope();
-function scope() {
-    var globalVar = "I am a global variable";
-    console.log(globalVar);
+// (){}......we called it control.....object syntax is a declaration
+// function scope() {
+//     var globalVar = "I am a global variable";
+//     console.log(globalVar);
+// }
+// scope();
+// Do While Loop.....
+// let count = 0;
+// while (count < 5) {
+//     console.log(count);
+//     count++;
+// };
+// Do while execute code at least one time regardless of the condition is true or Not...
+// let i=0;
+// do{
+//     console.log(i);
+//     i++;
+// }while(i<6);
+// paper from chapter 1 to 10.... slides and class concepts.
+// let age = 25;
+// if (true) {
+//     let age = 20;
+//     console.log(age);
+// }
+// console.log(age);
+// 7 July, 2024....
+// console.log("umar");
+// function greeting(){
+//     console.log("This is message");
+// }
+// console.log("This is message 2");
+// console.log("This is message 3");
+// greeting()
+//Event loop work on call stack thats why above programe run set timeout in last....
+//macro task queue and micro task queue...
+//Asynchronous programming in Js is set timeout function.....
+// console.log("Start");
+// setTimeout(() => {
+//   console.log("This runs after 4  seconds");
+// }, 0);
+// console.log("End");
+//callback function.....
+// function greeting(cb){
+//   setTimeout(() => {
+//     console.log("hello world");
+//     cb();
+//   }, 2000);
+// }
+// function printNamne(){
+//   setTimeout(() => {
+//     console.log("Ali");
+//   }, 1000);
+// }
+// Promise....,pending, fulfilled, rejected...Promise is asynchronous
+function makeBiryani() {
+    return new Promise(function (resolve, reject) {
+        resolve("yes i cook biryani");
+        reject("i will not cook biryani");
+    });
 }
-scope();
+// makeBiryani()
+//   .then((result) => {
+//     console.log(result);
+//   }
+//   )
+//   .catch((err) => {
+//     console.log(err);
+//   })
+function callPromise() {
+    return __awaiter(this, void 0, void 0, function () {
+        var result, error_1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 2, 3, 4]);
+                    return [4 /*yield*/, makeBiryani()];
+                case 1:
+                    result = _a.sent();
+                    console.log(result);
+                    console.log("you all are invited");
+                    return [3 /*break*/, 4];
+                case 2:
+                    error_1 = _a.sent();
+                    console.log("error");
+                    return [3 /*break*/, 4];
+                case 3:
+                    console.log("It's final");
+                    return [7 /*endfinally*/];
+                case 4: return [2 /*return*/];
+            }
+        });
+    });
+}
+callPromise();
+// Above two mnethod are calling to promise one from .then .catch and other from async function through await..... 
+//try and catch are same as .then and .catch.....
